@@ -1,6 +1,8 @@
 import pandas as pd
+from formatting_utils import format_code, format_id
 
 # read xlsx file
+print("직원 정보 파일을 읽습니다.")
 excel_filename = input("파일 이름을 입력하세요: ")
 if not excel_filename:
     print("파일 이름을 확인해주세요.")
@@ -10,17 +12,6 @@ excel_file = excel_filename + '.xlsx'
 df = pd.read_excel(excel_file)
 
 employee_info_list = []
-
-def format_code(num):
-    # 22 -> '0022'
-    return f"{num:0>4}"
-
-def format_id(id):
-    # 12345678 -> '012345678' (9자리)
-    id_str = str(id).strip()
-    if id_str.isdigit():
-        return f"{int(id_str):0>9}"
-    return id_str
 
 for _, row in df.iterrows():
     employee_id = row.get('사원코드', '')
@@ -40,11 +31,9 @@ for _, row in df.iterrows():
     }
     employee_info_list.append(employee_info)
 
+
 def get_department_by_name(employee_card):
     for info in employee_info_list:
         if info['employee_card'] == employee_card:
             return info['employee_name'], info['department_name']
     return None
-
-# test code
-print(get_department_by_name(input("카드번호를 입력하세요: ")))
