@@ -1,0 +1,42 @@
+{
+  "work_hours": {
+    "standard_start": "08:00",
+    "standard_end": "17:00",
+    "standard_hours": 8
+  },
+  "overtime_exclusion_periods": [
+    {"start": "00:00", "end": "01:00"},
+    {"start": "05:00", "end": "06:00"},
+    {"start": "12:00", "end": "13:00"},
+    {"start": "17:00", "end": "18:00"}
+  ],
+  "night_work_period": {
+    "start": "22:00",
+    "end": "06:00",
+    "exclusion_periods": [
+      {"start": "00:00", "end": "01:00"},
+      {"start": "05:00", "end": "06:00"}
+    ]
+  },
+  "meal_allowance": {
+    "weekday_periods": [
+      {"start": "00:00", "end": "01:00"},
+      {"start": "05:00", "end": "06:00"}
+    ],
+    "weekend_periods": [
+      {"start": "00:00", "end": "01:00"},
+      {"start": "05:00", "end": "06:00"},
+      {"start": "12:00", "end": "13:00"},
+      {"start": "17:00", "end": "18:00"}
+    ],
+    "amount_per_period": 10000
+  },
+  "transport_allowance": {
+    "weekday_cutoff_time": "22:00",
+    "weekday_amount": 5000,
+    "weekend_amount": 5000
+  },
+  "holiday_bonus": {
+    "min_approved_ot_hours": 8
+  }
+}
